@@ -12,7 +12,7 @@ class TownTableSeeder extends Seeder
      */
     public function run()
     {
-        $names = ['London', 'New York', 'Sidney'];
+        $names = ['London', 'New York', 'Sidney', 'Ankara', 'Tokio'];
         foreach ($names as $name){
             Town::create([
                 'name' => $name

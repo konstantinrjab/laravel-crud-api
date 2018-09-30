@@ -13,10 +13,12 @@ class TownTableSeeder extends Seeder
     public function run()
     {
         $names = ['London', 'New York', 'Sidney', 'Ankara', 'Tokio'];
-        foreach ($names as $name){
-            Town::create([
-                'name' => $name
-            ]);
+        foreach ($names as $name) {
+            if (!Town::where('name', $name)->exists()) {
+                Town::create([
+                    'name' => $name
+                ]);
+            }
         }
     }
 }
